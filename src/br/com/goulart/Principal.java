@@ -83,11 +83,11 @@ public class Principal {
             }
 
             System.out.println("Digite o valor que deseja converter: ");
-            double quantidade = entrada.nextDouble();
+            conversor.quantidade = entrada.nextDouble();
 
-            RespostaParesMoedas resultado = conversor.obterParMoedas(quantidade);
+            RespostaParesMoedas resultado = conversor.obterParMoedas();
 
-            System.out.println("O valor de " + conversor.moedaBase + " " + quantidade +
+            System.out.println("O valor de " + conversor.moedaBase + " " + conversor.quantidade +
                     " para " + conversor.moedaAlvo + " é " + resultado.conversion_result);
         }
     }

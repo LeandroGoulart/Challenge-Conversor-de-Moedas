@@ -9,17 +9,19 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 import br.com.goulart.model.RespostaParesMoedas;
+import br.com.goulart.Principal;
 
 public class ObterParMoedas {
     public String moedaBase;
     public String moedaAlvo;
+    public double quantidade;
 
     private String pegaURLCompleta(){
         return "https://v6.exchangerate-api.com/v6/4edb2e2e0365d5129ba71e34/pair/" +
-                this.moedaBase + "/" + this.moedaAlvo + "/1";
+                this.moedaBase + "/" + this.moedaAlvo + "/" + quantidade;
     }
 
-    public RespostaParesMoedas obterParMoedas(double quantidade){
+    public RespostaParesMoedas obterParMoedas(){
         try{
             var urlRequisicao  = pegaURLCompleta();
 
